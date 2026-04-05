@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital - Material de Estudio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Personalizados -->
+    <!-- 1. Variables CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <!-- 2. Estilos globales -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- 3. Navbar -->
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- 4. Estilos específicos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- 5. Formularios (si es necesario) -->
+    <link rel="stylesheet" href="../css/forms.css">
+
+    <!-- 6. Responsividad -->
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        .career-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--navy-900);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .career-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--verde-500);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-primary {
+            background: var(--verde-500);
+            color: var(--navy-950);
+            font-weight: 700;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: var(--verde-400);
+            transform: scale(1.02);
+        }
+
+        .input-search {
+            background: var(--navy-900);
+            border: 1px solid var(--navy-700);
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .input-search:focus {
+            border-color: var(--verde-500);
+            box-shadow: 0 0 0 4px rgba(34, 196, 110, 0.1);
+            outline: none;
+        }
+
+        .quick-link-card {
+            background: var(--navy-900);
+            border: 1px solid var(--navy-700);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-link-card:hover {
+            border-color: var(--verde-500);
+            background: rgba(34, 196, 110, 0.05);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div>
+            <a href="index.html">
+                <div>
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <span>BIBLIOTECA <span>DIGITAL</span></span>
+                    <span>CEICH • FICH</span>
+                </div>
+            </a>
+            <div>
+                <a href="./pages/que_es_la_biblioteca.html">¿Qué es?</a>
+                <a href="./pages/modelos_notas_reglamento.html">Modelos de Notas</a>
+                <a href="./pages/planes_estudio.html">Planes de Estudio</a>
+                <a href="./pages/deja_apunte.html" style="background: #22c46e; color: #020c1a; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; transition: all .3s; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-feather"></i> DEJÁ TU APUNTE
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-20 pb-16 px-4 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter leading-tight font-syne uppercase">
+                MATERIAL <span style="color: var(--verde-500);">COLABORATIVO.</span>
+            </h1>
+            <p class="text-[#8892b0] text-lg mb-12 max-w-2xl mx-auto">
+                La herramienta oficial del CEICH para centralizar apuntes, exámenes y guías de toda la facultad.
+            </p>
+            <div class="relative group max-w-2xl mx-auto">
+                <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-[#8892b0] group-focus-within:text-verde-500 transition"></i>
+                <input type="text" id="mainSearch" onkeyup="filterCards()" placeholder="Busca tu carrera o materia..." 
+                       class="input-search w-full py-5 pl-14 pr-6 rounded-2xl text-lg shadow-2xl">
+            </div>
+        </div>
+    </header>
+
+    <!-- Accesos Rápidos -->
+    <section class="max-w-7xl mx-auto px-4 mb-20">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <a href="./pages/que_es_la_biblioteca.html" class="quick-link-card">
+                <i class="fas fa-info-circle text-[#22c46e] text-2xl mb-3"></i>
+                <p class="text-[10px] font-bold uppercase tracking-widest">¿Qué es la Biblioteca?</p>
+            </a>
+            <a href="./pages/deja_apunte.html" class="quick-link-card">
+                <i class="fas fa-upload text-[#22c46e] text-2xl mb-3"></i>
+                <p class="text-[10px] font-bold uppercase tracking-widest">Dejá tu apunte</p>
+            </a>
+            <a href="./pages/calendario_mail_clave.html" class="quick-link-card">
+                <i class="fas fa-calendar-alt text-[#22c46e] text-2xl mb-3"></i>
+                <p class="text-[10px] font-bold uppercase tracking-widest">Calendario y Links</p>
+            </a>
+            <a href="./pages/modelos_notas_reglamento.html" class="quick-link-card">
+                <i class="fas fa-file-signature text-[#22c46e] text-2xl mb-3"></i>
+                <p class="text-[10px] font-bold uppercase tracking-widest">Modelos de Notas</p>
+            </a>
+            <a href="./pages/planes_estudio.html" class="quick-link-card">
+                <i class="fas fa-map text-[#22c46e] text-2xl mb-3"></i>
+                <p class="text-[10px] font-bold uppercase tracking-widest">Planes de Estudio</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Listado de Carreras -->
+    <main class="max-w-7xl mx-auto px-4 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="careerGrid">
+
+            <!-- Ingreso -->
+            <div class="career-card rounded-2xl p-8 group" data-title="Inteligencia Artificial">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20">
+                            <i class="fas fa-microchip text-[#22c46e] text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-syne uppercase tracking-tight">Ingreso</h3>
+                    <p class="text-sm text-[#8892b0] mb-8">¿Ya decidiste qué estudiar? Nosotros te ayudamos con el resto, aquí encontrarás formas de contactarnos, material y planes de estudio. ¡No te lo pierdas!</p>
+                </div>
+                <a href="./pages/ingreso.html" class="btn-primary w-full py-4 rounded-xl text-sm uppercase tracking-widest">
+                    VER MATERIAL
+                </a>
+            </div>            
+
+            <!-- Informatica -->
+            <div class="career-card rounded-2xl p-8 group" data-title="Ingeniería Informática">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20">
+                            <i class="fas fa-laptop-code text-[#22c46e] text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-syne uppercase tracking-tight">Ingeniería Informática</h3>
+                    <p class="text-sm text-[#8892b0] mb-8">Base de datos de algoritmos, redes y sistemas.</p>
+                </div>
+                <a href="./pages/carreras/ing_informatica.html" class="btn-primary w-full py-4 rounded-xl text-sm uppercase tracking-widest">
+                    VER MATERIAL
+                </a>
+            </div>
+
+            <!-- IA -->
+            <div class="career-card rounded-2xl p-8 group" data-title="Inteligencia Artificial">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20">
+                            <i class="fas fa-microchip text-[#22c46e] text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-syne uppercase tracking-tight">Inteligencia Artificial</h3>
+                    <p class="text-sm text-[#8892b0] mb-8">Especialidad en Machine Learning y Redes Neuronales.</p>
+                </div>
+                <a href="./pages/carreras/ing_ia.html" class="btn-primary w-full py-4 rounded-xl text-sm uppercase tracking-widest">
+                    VER MATERIAL
+                </a>
+            </div>
+
+            <!-- Ambiental -->
+            <div class="career-card rounded-2xl p-8 group" data-title="Ingeniería Ambiental">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20">
+                            <i class="fas fa-seedling text-[#22c46e] text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-syne uppercase tracking-tight">Ingeniería Ambiental</h3>
+                    <p class="text-sm text-[#8892b0] mb-8">Tratamiento de efluentes y gestión de recursos.</p>
+                </div>
+                <a href="./pages/carreras/ing_ambiental.html" class="btn-primary w-full py-4 rounded-xl text-sm uppercase tracking-widest">
+                    VER MATERIAL
+                </a>
+            </div>
+            
+            <!-- Hídricos -->
+            <div class="career-card rounded-2xl p-8 group" data-title="Recursos Hídricos">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20">
+                            <i class="fas fa-water text-[#22c46e] text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-syne uppercase tracking-tight">Recursos Hídricos</h3>
+                    <p class="text-sm text-[#8892b0] mb-8">Hidrología e infraestructura hídrica.</p>
+                </div>
+                <a href="./pages/carreras/ing_recursos_hidricos.html" class="btn-primary w-full py-4 rounded-xl text-sm uppercase tracking-widest">
+                    VER MATERIAL
+                </a>
+            </div>
+
+            <!-- Agrimensura -->
+            <div class="career-card rounded-2xl p-8 group" data-title="Agrimensura">
+                <div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center border border-emerald-500/20">
+                            <i class="fas fa-drafting-compass text-[#22c46e] text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 font-syne uppercase tracking-tight">Agrimensura</h3>
+                    <p class="text-sm text-[#8892b0] mb-8">Topografía, Geodesia y Catastro.</p>
+                </div>
+                <a href="./pages/carreras/ing_agrimensura.html" class="btn-primary w-full py-4 rounded-xl text-sm uppercase tracking-widest">
+                    VER MATERIAL
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#020c1a] border-t border-[#0d3360] py-12 px-4 text-center">
+        <p class="text-[10px] text-[#8892b0] uppercase tracking-[0.3em] font-bold mb-4">© 2025 Biblioteca Digital CEICH</p>
+        <div class="flex justify-center gap-6">
+            <a href="#" class="text-[#8892b0] hover:text-[#22c46e] transition text-lg"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-[#8892b0] hover:text-[#22c46e] transition text-lg"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function filterCards() {
+            const query = document.getElementById('mainSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.career-card');
+            
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

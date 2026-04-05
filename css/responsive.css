@@ -1,0 +1,218 @@
+/* ═══════════════════════════════════════════
+   RESPONSIVE DESIGN - MEDIA QUERIES
+═══════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════
+   TABLET (768px - 1024px)
+═══════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+
+  .card {
+    padding: var(--spacing-xl);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE (480px - 768px)
+═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 64px;
+  }
+
+  .hero {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .hero h1 {
+    font-size: var(--text-4xl);
+  }
+
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+
+  .card {
+    padding: var(--spacing-lg);
+  }
+
+  .card-title {
+    font-size: var(--text-xl);
+  }
+
+  .btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--text-sm);
+  }
+
+  .footer {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SMALL MOBILE (< 480px)
+═══════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 60px;
+    font-size: var(--text-sm);
+  }
+
+  .hero {
+    padding: var(--spacing-2xl) var(--spacing-sm);
+  }
+
+  .hero h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero p {
+    font-size: var(--text-sm);
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .grid {
+    gap: var(--spacing-md);
+  }
+
+  h1 { font-size: var(--text-2xl); }
+  h2 { font-size: var(--text-xl); }
+  h3 { font-size: var(--text-lg); }
+  h4 { font-size: var(--text-base); }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .card-title {
+    font-size: var(--text-lg);
+  }
+
+  .card-description {
+    font-size: var(--text-xs);
+  }
+
+  .btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--text-xs);
+  }
+
+  .quick-link-card {
+    padding: var(--spacing-md);
+  }
+
+  .quick-link-card i {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .quick-link-card p {
+    font-size: 0.65rem;
+  }
+
+  .input-search {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-md) 2.5rem;
+    font-size: var(--text-sm);
+  }
+
+  input,
+  select,
+  textarea {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .footer {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .footer-text {
+    font-size: 0.65rem;
+  }
+
+  .footer-links {
+    gap: var(--spacing-lg);
+  }
+
+  .footer-links a {
+    font-size: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   LANDSCAPE MOBILE (480px - 768px landscape)
+═══════════════════════════════════════════ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    padding-top: 60px;
+  }
+
+  .hero {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .hero h1 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  h1 { font-size: var(--text-2xl); }
+  h2 { font-size: var(--text-lg); }
+  h3 { font-size: var(--text-base); }
+}
+
+/* ═══════════════════════════════════════════
+   DESKTOP (> 1024px)
+═══════════════════════════════════════════ */
+
+@media (min-width: 1025px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   ULTRA WIDE (> 1440px)
+═══════════════════════════════════════════ */
+
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  h1 { font-size: var(--text-7xl); }
+}

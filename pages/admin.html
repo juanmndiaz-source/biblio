@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Biblioteca Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- 1. Variables CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <!-- 2. Estilos globales -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- 3. Navbar -->
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- 4. Estilos específicos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- 5. Formularios (si es necesario) -->
+    <link rel="stylesheet" href="../css/forms.css">
+
+    <!-- 6. Responsividad -->
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div>
+            <a href="../index.html">
+                <div>
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <span>BIBLIOTECA <span>DIGITAL</span></span>
+                    <span>CEICH • FICH</span>
+                </div>
+            </a>
+            <div>
+                <a href="que_es_la_biblioteca.html">¿Qué es?</a>
+                <a href="modelos_notas_reglamento.html">Modelos de Notas</a>
+                <a href="planes_estudio.html">Planes de Estudio</a>
+                <a href="deja_apunte.html" style="background: #22c46e; color: #020c1a; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; transition: all .3s; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-feather"></i> DEJÁ TU APUNTE
+                </a>
+            </div>
+        </div>
+    </nav>
+
+<!-- MAIN CONTENT -->
+<section style="padding:100px 20px 80px; background: linear-gradient(180deg, #041728 0%, #020c1a 100%); min-height:100vh; margin-top:64px;">
+  <div class="grid-bg" style="position:absolute;inset:0;z-index:0;"></div>
+  
+  <div style="max-width:1400px;margin:0 auto;position:relative;z-index:1;">
+    
+    <div style="margin-bottom:60px;">
+      <h2 style="font-size:2.8rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px;font-family:'Syne',sans-serif;">
+        Panel <span style="color:var(--verde-500);">Administrador</span>
+      </h2>
+      <p style="color:var(--text-soft);font-size:1.05rem;line-height:1.6;max-width:700px;">
+        Gestiona los materiales de ingreso, revisa aportes, personaliza el calendario y administra los planes de estudio.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start;">
+      
+      <div>
+        <!-- TABS -->
+        <div class="tabs" style="margin-bottom: 30px;">
+          <button class="tab-btn active" onclick="mostrarTab('materiales')">Materiales</button>
+          <button class="tab-btn" onclick="mostrarTab('materias')">Materias</button>
+          <button class="tab-btn" onclick="mostrarTab('aportes')">Aportes</button>
+          <button class="tab-btn" onclick="mostrarTab('calendario')">Calendario</button>
+          <button class="tab-btn" onclick="mostrarTab('links')">Links</button>
+          <button class="tab-btn" onclick="mostrarTab('planes')">Planes de Estudio</button>
+        </div>
+
+        <!-- TAB MATERIALES -->
+        <div id="tab-materiales">
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:20px;font-family:'Syne',sans-serif;font-size:1.2rem;">Agregar Nuevo Material</h3>
+            <form id="materialForm">
+              <div class="form-group">
+                <label>Año/Nombre del Ingreso</label>
+                <input type="text" id="nombreMaterial" placeholder="Ej: Ingreso 2025" required>
+              </div>
+              <div class="form-group">
+                <label>Descripción</label>
+                <textarea id="descripcionMaterial" placeholder="Descripción del material" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Categoría</label>
+                <select id="categoriaMaterial" required>
+                  <option value="">Seleccionar categoría</option>
+                  <option value="2025">Ingreso 2025</option>
+                  <option value="2024">Ingreso 2024</option>
+                  <option value="2023">Ingreso 2023</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Links</label>
+                <div id="linksContainer" style="display:flex;flex-direction:column;gap:10px;"></div>
+                <button type="button" id="addLinkBtn" class="btn-outline" style="margin-top:10px;">+ Agregar Link</button>
+              </div>
+              <button type="submit" class="btn-submit" style="width:100%;">Agregar Material</button>
+            </form>
+          </div>
+
+          <h3 style="color:#fff;font-weight:700;margin-bottom:16px;font-family:'Syne',sans-serif;font-size:1.2rem;">Materiales Agregados</h3>
+          <div class="material-list" id="materialList">
+            <div style="padding:24px;text-align:center;color:var(--text-muted);">Sin materiales agregados aún</div>
+          </div>
+        </div>
+
+        <!-- TAB MATERIAS -->
+        <div id="tab-materias" style="display:none;">
+          
+          <!-- SELECTOR DE CARRERA -->
+          <div style="margin-bottom:30px;display:flex;gap:12px;flex-wrap:wrap;">
+            <select id="carreraSelect" onchange="cambiarCarrera()" style="
+              padding:10px 16px;
+              border-radius:8px;
+              border:2px solid rgba(34,196,110,.2);
+              background:rgba(34,196,110,.05);
+              color:#fff;
+              font-weight:600;
+              cursor:pointer;
+            ">
+              <option value="ing_informatica">Ingeniería Informática</option>
+              <option value="ing_ambiental">Ingeniería Ambiental</option>
+              <option value="ing_agrimensura">Ingeniería en Agrimensura</option>
+              <option value="ing_recursos_hidricos">Ingeniería en Recursos Hídricos</option>
+              <option value="ing_ia">Ingeniería en IA</option>
+            </select>
+          </div>
+
+          <!-- FORMULARIO AGREGAR/EDITAR MATERIA -->
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:20px;font-family:'Syne',sans-serif;font-size:1.2rem;">
+              <span id="formTitulo">Agregar Nueva Materia</span>
+            </h3>
+            <form id="materiaForm">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label>Año</label>
+                  <select id="materiaAno" required>
+                    <option value="">Seleccionar año</option>
+                    <option value="1">1.er Año</option>
+                    <option value="2">2.do Año</option>
+                    <option value="3">3.er Año</option>
+                    <option value="4">4.to Año</option>
+                    <option value="5">5.to Año</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Cuatrimestre</label>
+                  <select id="materiaCuatrimestre" required>
+                    <option value="1">Primer Cuatrimestre</option>
+                    <option value="2">Segundo Cuatrimestre</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Nombre de la Materia</label>
+                <input type="text" id="materiaNombre" placeholder="Ej: Matemática Básica" required>
+              </div>
+
+              <div class="form-group">
+                <label>Descripción</label>
+                <textarea id="materiaDescripcion" placeholder="Descripción de la materia" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>URL/Link de la Materia</label>
+                <input type="url" id="materiaLink" placeholder="https://ejemplo.com/materia">
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="form-group">
+                  <label>Ícono SVG</label>
+                  <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:10px;margin-bottom:10px;" id="iconosContainer">
+                    <!-- Los íconos se cargarán aquí -->
+                  </div>
+                  <input type="hidden" id="materiaIcono" value="chart">
+                </div>
+
+                <div class="form-group">
+                  <label>Color de Fondo (Hex)</label>
+                  <input type="color" id="materiaColor" value="#22c46e" required>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:12px;">
+                <button type="submit" class="btn-submit" style="flex:1;">Guardar Materia</button>
+                <button type="button" id="btnCancelarEdicion" style="flex:1;display:none;padding:12px;border-radius:8px;border:2px solid rgba(239,68,68,.3);background:transparent;color:#ef4444;font-weight:600;cursor:pointer;transition:all .3s;" onclick="cancelarEdicion()">Cancelar Edición</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- LISTA DE MATERIAS POR AÑO Y CUATRIMESTRE -->
+          <div style="margin-top:40px;">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:20px;font-family:'Syne',sans-serif;font-size:1.2rem;">Materias por Año</h3>
+            
+            <div id="materiasOrganizadas" style="display:grid;gap:24px;">
+              <!-- Se cargará dinámicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB APORTES -->
+        <div id="tab-aportes" style="display:none;">
+          <h3 style="color:#fff;font-weight:700;margin-bottom:16px;font-family:'Syne',sans-serif;font-size:1.2rem;">Aportes de Estudiantes</h3>
+          <div class="material-list" id="aportsList">
+            <div style="padding:24px;text-align:center;color:var(--text-muted);">Sin aportes pendientes</div>
+          </div>
+        </div>
+
+        <!-- TAB CALENDARIO -->
+        <div id="tab-calendario" style="display:none;">
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:20px;font-family:'Syne',sans-serif;font-size:1.2rem;">Configurar Calendario</h3>
+            
+            <div class="grid-2">
+              <!-- AÑO -->
+              <div class="form-group">
+                <label>Año del Calendario</label>
+                <input type="number" id="calendarYear" min="2020" max="2050" value="2026">
+              </div>
+
+              <!-- COLORES -->
+              <div class="form-group">
+                <label>Color Highlight</label>
+                <div class="color-picker">
+                  <div class="color-option" style="background: rgba(34,196,110,.25);" onclick="selectColor('highlight', this)"></div>
+                  <div class="color-option" style="background: rgba(52,152,219,.25);" onclick="selectColor('highlight', this)"></div>
+                  <div class="color-option" style="background: rgba(155,89,182,.25);" onclick="selectColor('highlight', this)"></div>
+                  <div class="color-option" style="background: rgba(230,126,34,.25);" onclick="selectColor('highlight', this)"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Color Exam</label>
+                <div class="color-picker">
+                  <div class="color-option" style="background: rgba(34,196,110,.15);" onclick="selectColor('exam', this)"></div>
+                  <div class="color-option" style="background: rgba(52,152,219,.15);" onclick="selectColor('exam', this)"></div>
+                  <div class="color-option" style="background: rgba(155,89,182,.15);" onclick="selectColor('exam', this)"></div>
+                  <div class="color-option" style="background: rgba(230,126,34,.15);" onclick="selectColor('exam', this)"></div>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" onclick="guardarConfigCalendar()" class="btn-submit" style="width:100%;margin-top:16px;">Guardar Configuración</button>
+          </div>
+
+          <!-- AGREGAR FECHAS -->
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:20px;font-family:'Syne',sans-serif;font-size:1.2rem;">Agregar Fechas Especiales</h3>
+            
+            <div class="form-group">
+              <label>Mes</label>
+              <select id="fechaMes" required>
+                <option value="0">Enero</option>
+                <option value="1">Febrero</option>
+                <option value="2" selected>Marzo</option>
+                <option value="3">Abril</option>
+                <option value="4">Mayo</option>
+                <option value="5">Junio</option>
+                <option value="6">Julio</option>
+                <option value="7">Agosto</option>
+                <option value="8">Septiembre</option>
+                <option value="9">Octubre</option>
+                <option value="10">Noviembre</option>
+                <option value="11">Diciembre</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Día</label>
+              <input type="number" id="fechaDia" min="1" max="31" placeholder="Ej: 15">
+            </div>
+
+            <div class="form-group">
+              <label>Tipo de Evento</label>
+              <select id="fechaTipo">
+                <option value="inscripcion">Inscripción</option>
+                <option value="examen">Examen</option>
+                <option value="cursado">Cursado</option>
+                <option value="recursado">Recursado</option>
+                <option value="receso">Receso</option>
+                <option value="ciclo">Ciclo Superior</option>
+                <option value="special">Especial (con estrella)</option>
+              </select>
+            </div>
+
+            <button type="button" onclick="agregarFecha()" class="btn-submit" style="width:100%;">Agregar Fecha</button>
+          </div>
+
+          <!-- FECHAS AGREGADAS -->
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:16px;font-family:'Syne',sans-serif;font-size:1.1rem;">Fechas Configuradas</h3>
+            <div id="fechasContainer" style="max-height: 400px; overflow-y: auto;">
+              <div style="color:var(--text-muted);text-align:center;">Cargando fechas...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB LINKS -->
+        <div id="tab-links" style="display:none;">
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:20px;font-family:'Syne',sans-serif;font-size:1.2rem;">Editar Links Útiles</h3>
+            <div id="linksEditContainer" style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;"></div>
+            <button type="button" onclick="guardarLinks()" class="btn-submit" style="width:100%;">Guardar Links</button>
+          </div>
+
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:16px;font-family:'Syne',sans-serif;font-size:1.1rem;">Vista Previa</h3>
+            <div id="linksPreview" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;"></div>
+          </div>
+        </div>
+
+        <!-- TAB PLANES DE ESTUDIO -->
+        <div id="tab-planes" style="display:none;">
+          <div class="admin-form">
+            <h3 style="color:#fff;font-weight:700;margin-bottom:20px;font-family:'Syne',sans-serif;font-size:1.2rem;">Agregar Nuevo Plan de Estudio</h3>
+            <form id="planForm">
+              <div class="form-group">
+                <label>Nombre de la Carrera</label>
+                <input type="text" id="planNombre" placeholder="Ej: Ingeniería en Informática" required>
+              </div>
+
+              <div class="form-group">
+                <label>Tipo de Carrera</label>
+                <select id="planTipo" required>
+                  <option value="licenciatura">Licenciatura</option>
+                  <option value="intermedia">Carrera Intermedia</option>
+                  <option value="tecnicatura">Tecnicatura</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Imagen del Plan</label>
+                <div class="file-input-wrapper">
+                  <label for="planImagen" class="file-input-label">
+                    Arrastra una imagen aquí o haz clic para seleccionar
+                  </label>
+                  <input type="file" id="planImagen" accept="image/*">
+                </div>
+                <div id="planImagenPreview" class="image-preview" style="display:none;">
+                  <img id="planImagenImg" src="" alt="Preview">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>URL del Plan de Estudio (PDF)</label>
+                <input type="url" id="planUrl" placeholder="https://..." required>
+              </div>
+
+              <button type="submit" class="btn-submit" style="width:100%;">Agregar Plan</button>
+            </form>
+          </div>
+
+          <h3 style="color:#fff;font-weight:700;margin-bottom:16px;font-family:'Syne',sans-serif;font-size:1.2rem;">Planes Agregados</h3>
+          <div id="planesContainer" class="plan-grid">
+            <div style="padding:24px;text-align:center;color:var(--text-muted);grid-column:1/-1;">Sin planes agregados aún</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div class="widget">
+          <div class="widget-header">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+            </svg>
+            Información
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:12px;">
+            <p style="color:var(--text-soft);font-size:.8rem;line-height:1.5;">
+              Este panel te permite:
+            </p>
+            <ul style="color:var(--text-soft);font-size:.8rem;list-style:none;padding-left:0;">
+              <li>✓ Agregar materiales</li>
+              <li>✓ Revisar aportes</li>
+              <li>✓ Personalizar calendario</li>
+              <li>✓ Cambiar colores</li>
+              <li>✓ Editar fechas</li>
+              <li>✓ Editar links útiles</li>
+              <li>✓ Gestionar planes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass" style="border-left:4px solid var(--verde-500);padding:20px;">
+          <div style="font-family:'Syne',sans-serif;font-weight:700;color:#fff;font-size:.85rem;margin-bottom:12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;display:inline;margin-right:6px;">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            Sincronizar
+          </div>
+          <p style="color:var(--text-soft);font-size:.78rem;line-height:1.5;margin-bottom:16px;">
+            Los cambios se guardan automáticamente en localStorage.
+          </p>
+          <button onclick="refrescarCalendario()" class="btn-verde" style="width:100%;padding:10px;border:none;cursor:pointer;border-radius:8px;font-weight:600;font-size:.85rem;">
+            Refrescar Datos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:linear-gradient(180deg,#041728,#020c1a);border-top:1px solid rgba(34,196,110,.08);padding:56px 20px 28px;">
+  <div style="max-width:1280px;margin:0 auto;text-align:center;">
+    <p style="color:var(--text-muted);font-size:.85rem;">© 2025 Biblioteca Digital FICH - Panel Administrador</p>
+  </div>
+</footer>
+
+<script src="../js/admin.js" defer></script>
+
+<!-- ESTILOS ADICIONALES -->
+<style>
+  .ano-section {
+    background: rgba(34,196,110,.05);
+    border: 1px solid rgba(34,196,110,.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .ano-section h4 {
+    color: var(--verde-500);
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+  }
+
+  .cuatrimestre-section {
+    background: rgba(255,255,255,.02);
+    border-left: 3px solid var(--verde-500);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .cuatrimestre-section h5 {
+    color: #fff;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    font-size: 0.95rem;
+  }
+
+  .materias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+  }
+
+  .materia-card {
+    background: rgba(34,196,110,.08);
+    border: 1px solid rgba(34,196,110,.2);
+    border-radius: 10px;
+    padding: 14px;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .materia-card:hover {
+    background: rgba(34,196,110,.12);
+    border-color: rgba(34,196,110,.4);
+    transform: translateY(-2px);
+  }
+
+  .materia-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .materia-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .materia-card-info h6 {
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .materia-card-info p {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin: 0;
+  }
+
+  .materia-card-desc {
+    color: var(--text-soft);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+
+  .materia-card-link {
+    color: var(--verde-500);
+    font-size: 0.75rem;
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .materia-card-actions {
+    display: flex;
+    gap: 6px;
+  }
+
+  .materia-card-actions button {
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all .3s;
+  }
+
+  .btn-edit-card {
+    background: rgba(34,196,110,.2);
+    color: var(--verde-500);
+  }
+
+  .btn-edit-card:hover {
+    background: rgba(34,196,110,.3);
+  }
+
+  .btn-delete-card {
+    background: rgba(239,68,68,.2);
+    color: #ef4444;
+  }
+
+  .btn-delete-card:hover {
+    background: rgba(239,68,68,.3);
+  }
+
+  .btn-link-card {
+    background: rgba(59,130,246,.2);
+    color: #3b82f6;
+  }
+
+  .btn-link-card:hover {
+    background: rgba(59,130,246,.3);
+  }
+
+  .icono-option {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid rgba(34,196,110,.2);
+    background: rgba(34,196,110,.05);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+  }
+
+  .icono-option:hover {
+    border-color: rgba(34,196,110,.4);
+  }
+
+  .icono-option.selected {
+    background: rgba(34,196,110,.2);
+    border-color: var(--verde-500);
+  }
+
+  .materia-vacia {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 12px;
+    text-align: center;
+    font-style: italic;
+  }
+</style>
+</body>
+</html>

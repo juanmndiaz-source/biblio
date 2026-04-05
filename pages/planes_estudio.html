@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Estudio — Biblioteca Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- 1. Variables CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <!-- 2. Estilos globales -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- 3. Navbar -->
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- 4. Estilos específicos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- 5. Formularios (si es necesario) -->
+    <link rel="stylesheet" href="../css/forms.css">
+
+    <!-- 6. Responsividad -->
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div>
+            <a href="../index.html">
+                <div>
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <span>BIBLIOTECA <span>DIGITAL</span></span>
+                    <span>CEICH • FICH</span>
+                </div>
+            </a>
+            <div>
+                <a href="que_es_la_biblioteca.html">¿Qué es?</a>
+                <a href="modelos_notas_reglamento.html">Modelos de Notas</a>
+                <a href="planes_estudio.html">Planes de Estudio</a>
+                <a href="deja_apunte.html" style="background: #22c46e; color: #020c1a; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; transition: all .3s; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-feather"></i> DEJÁ TU APUNTE
+                </a>
+            </div>
+        </div>
+    </nav>
+
+<!-- MAIN CONTENT -->
+<section style="padding:100px 20px 80px; background: linear-gradient(180deg, #041728 0%, #020c1a 100%); min-height:100vh; margin-top:64px;">
+  <div class="grid-bg" style="position:absolute;inset:0;z-index:0;"></div>
+  
+  <div style="max-width:1000px;margin:0 auto;position:relative;z-index:1;">
+    
+    <!-- HEADER -->
+    <div style="margin-bottom:60px;text-align:center;">
+      <div class="badge" style="margin:0 auto 16px;">
+        <div class="pulse-dot"></div>
+        Información académica
+      </div>
+      <h1 style="font-size:2.8rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px;font-family:'Syne',sans-serif;">
+        Planes de <span style="color:var(--verde-500);">Estudio</span>
+      </h1>
+      <p style="color:var(--text-soft);font-size:1.05rem;line-height:1.6;max-width:700px;margin:0 auto;">
+        Descubrí los planes de estudio de todas las carreras que ofrece la Facultad de Ingeniería y Ciencias Hídricas.
+      </p>
+    </div>
+
+    <!-- INTRODUCCIÓN -->
+    <div class="section-intro">
+      <p>
+        <strong>Averigua cómo es el plan de estudio de tu carrera</strong>
+      </p>
+      <p>
+        A continuación te presentamos todos los planes de estudio disponibles. Selecciona tu carrera para ver más detalles y descargar el documento completo.
+      </p>
+      <div class="planes-count">
+        5 Carreras disponibles
+      </div>
+    </div>
+
+    <!-- ACORDIONES -->
+    <div class="grid-acordiones" id="acordionesContainer" style="display:grid;gap:16px;">
+      <!-- Los acordiones se generarán dinámicamente aquí -->
+    </div>
+
+    <!-- INFORMACIÓN ADICIONAL -->
+    <div class="section-intro" style="margin-top:60px;">
+      <p>
+        <strong>¿No encontrás tu carrera?</strong>
+      </p>
+      <p>
+        Si tenés dudas sobre algún plan de estudio o necesitás información adicional, no dudes en contactarnos. Estamos disponibles para ayudarte.
+      </p>
+      <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="mailto:ingresofich@fich.edu.ar" class="btn-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Enviar Consulta
+        </a>
+        <a href="https://instagram.com/ingresoofich2026" target="_blank" class="btn-link">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+          </svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL PARA IMAGEN AMPLIADA -->
+<div id="modalImagen" class="modal-imagen" onclick="cerrarModalImagen(event)" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:1000;align-items:center;justify-content:center;">
+  <div class="modal-content" onclick="event.stopPropagation()" style="position:relative;max-width:90vw;max-height:90vh;">
+    <button class="modal-close" onclick="cerrarModalImagen()" style="position:absolute;top:16px;right:16px;background:#ef4444;color:#fff;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;z-index:10;">✕</button>
+    <img id="modalImg" src="" alt="Ampliada" style="max-width:100%;max-height:100%;border-radius:12px;">
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:linear-gradient(180deg,#041728,#020c1a);border-top:1px solid rgba(34,196,110,.08);padding:56px 20px 28px;">
+  <div style="max-width:1280px;margin:0 auto;text-align:center;">
+    <p style="color:var(--text-muted);font-size:.85rem;">© 2025 Biblioteca Digital FICH. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- ESTILOS ACORDIONES -->
+<style>
+  .acordion-item {
+    background: rgba(34,196,110,.05);
+    border: 1px solid rgba(34,196,110,.15);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .3s ease;
+  }
+
+  .acordion-item:hover {
+    background: rgba(34,196,110,.08);
+    border-color: rgba(34,196,110,.3);
+  }
+
+  .acordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+  }
+
+  .acordion-header:hover {
+    background: rgba(34,196,110,.1);
+  }
+
+  .acordion-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .acordion-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: rgba(34,196,110,.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verde-500);
+    font-size: 24px;
+  }
+
+  .acordion-titulo {
+    flex: 1;
+  }
+
+  .acordion-titulo h3 {
+    color: #fff;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+  }
+
+  .acordion-titulo p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .acordion-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(34,196,110,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verde-500);
+    transition: all .3s ease;
+    flex-shrink: 0;
+  }
+
+  .acordion-item.active .acordion-toggle {
+    background: rgba(34,196,110,.2);
+    transform: rotate(180deg);
+  }
+
+  .acordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+
+  .acordion-item.active .acordion-content {
+    max-height: 800px;
+  }
+
+  .acordion-body {
+    padding: 0 24px 24px 24px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .plan-imagen {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(34,196,110,.2);
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+
+  .plan-imagen:hover {
+    border-color: var(--verde-500);
+    transform: scale(1.02);
+  }
+
+  .plan-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .plan-actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  .btn-descargar {
+    flex: 1;
+    background: rgba(34,196,110,.2);
+    border: 1px solid rgba(34,196,110,.3);
+    color: var(--verde-500);
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-descargar:hover {
+    background: rgba(34,196,110,.3);
+    border-color: var(--verde-500);
+  }
+
+  .btn-ver-mas {
+    flex: 1;
+    background: var(--verde-500);
+    border: 1px solid var(--verde-500);
+    color: #020c1a;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-ver-mas:hover {
+    background: #1fa855;
+    border-color: #1fa855;
+  }
+
+  .modal-imagen {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .acordion-header {
+      padding: 16px 12px;
+    }
+
+    .acordion-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    .acordion-titulo h3 {
+      font-size: 1rem;
+    }
+
+    .plan-actions {
+      flex-direction: column;
+    }
+
+    .btn-descargar, .btn-ver-mas {
+      width: 100%;
+    }
+  }
+</style>
+
+<script src="../js/planes_estudio.js" defer></script>
+
+</body>
+</html>

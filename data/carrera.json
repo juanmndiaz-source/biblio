@@ -1,0 +1,86 @@
+{
+  "carreras": [
+    {
+      "id": "informatica",
+      "nombre": "Ingeniería Informática",
+      "descripcion": "Base de datos de algoritmos, redes y sistemas.",
+      "icon": "fa-laptop-code",
+      "duracion": "5 años",
+      "creditos": 330,
+      "url": "./pages/carreras/ing_informatica.html",
+      "materias": [
+        {
+          "id": "anal_mat_1",
+          "nombre": "Análisis Matemático I",
+          "semestre": 1,
+          "creditos": 6
+        },
+        {
+          "id": "alg_1",
+          "nombre": "Álgebra I",
+          "semestre": 1,
+          "creditos": 6
+        },
+        {
+          "id": "prog_1",
+          "nombre": "Programación I",
+          "semestre": 1,
+          "creditos": 6
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "nombre": "Inteligencia Artificial",
+      "descripcion": "Especialidad en Machine Learning y Redes Neuronales.",
+      "icon": "fa-microchip",
+      "duracion": "3 años",
+      "creditos": 180,
+      "url": "./pages/carreras/ing_ia.html",
+      "materias": [
+        {
+          "id": "ml_basics",
+          "nombre": "Machine Learning Basics",
+          "semestre": 1,
+          "creditos": 5
+        },
+        {
+          "id": "neural_net",
+          "nombre": "Redes Neuronales",
+          "semestre": 2,
+          "creditos": 6
+        }
+      ]
+    },
+    {
+      "id": "ambiental",
+      "nombre": "Ingeniería Ambiental",
+      "descripcion": "Tratamiento de efluentes y gestión de recursos.",
+      "icon": "fa-seedling",
+      "duracion": "5 años",
+      "creditos": 320,
+      "url": "./pages/carreras/ing_ambiental.html",
+      "materias": []
+    },
+    {
+      "id": "hidricos",
+      "nombre": "Recursos Hídricos",
+      "descripcion": "Hidrología e infraestructura hídrica.",
+      "icon": "fa-water",
+      "duracion": "5 años",
+      "creditos": 330,
+      "url": "./pages/carreras/ing_recursos_hidricos.html",
+      "materias": []
+    },
+    {
+      "id": "agrimensura",
+      "nombre": "Agrimensura",
+      "descripcion": "Topografía, Geodesia y Catastro.",
+      "icon": "fa-drafting-compass",
+      "duracion": "5 años",
+      "creditos": 300,
+      "url": "./pages/carreras/ing_agrimensura.html",
+      "materias": []
+    }
+  ]
+}

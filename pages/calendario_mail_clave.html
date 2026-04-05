@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario, Mail y Clave — Biblioteca Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- 1. Variables CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <!-- 2. Estilos globales -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- 3. Navbar -->
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- 4. Estilos específicos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- 5. Formularios (si es necesario) -->
+    <link rel="stylesheet" href="../css/forms.css">
+
+    <!-- 6. Responsividad -->
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div>
+            <a href="../index.html">
+                <div>
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <span>BIBLIOTECA <span>DIGITAL</span></span>
+                    <span>CEICH • FICH</span>
+                </div>
+            </a>
+            <div>
+                <a href="que_es_la_biblioteca.html">¿Qué es?</a>
+                <a href="modelos_notas_reglamento.html">Modelos de Notas</a>
+                <a href="planes_estudio.html">Planes de Estudio</a>
+                <a href="deja_apunte.html" style="background: #22c46e; color: #020c1a; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; transition: all .3s; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-feather"></i> DEJÁ TU APUNTE
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- MAIN CONTENT -->
+<section style="padding:100px 20px 80px; background: linear-gradient(180deg, #041728 0%, #020c1a 100%); min-height:100vh; margin-top:64px;">
+  <div class="grid-bg" style="position:absolute;inset:0;z-index:0;"></div>
+  
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
+    
+    <!-- HEADER -->
+    <div style="margin-bottom:60px;text-align:center;">
+      <div class="badge" style="margin:0 auto 16px;">
+        <div class="pulse-dot"></div>
+        Información importante
+      </div>
+      <h1 style="font-size:2.8rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px;font-family:'Syne',sans-serif;">
+        Calendario y <span style="color:var(--verde-500);">Claves</span>
+      </h1>
+      <p style="color:var(--text-soft);font-size:1.05rem;line-height:1.6;max-width:700px;margin:0 auto;">
+        Aquí encontrás el calendario académico del Ingreso FICH con todas las fechas importantes.
+      </p>
+    </div>
+
+    <!-- CALENDARIO -->
+    <div class="calendar-wrapper">
+      <div class="calendar-header">
+        <div class="calendar-title">CALENDARIO 26 FICH</div>
+        <div class="calendar-subtitle">Toda la info en: @mnfrich | @ingresoofich2026<br>Todos los apuntes en bibliotecafich.blogspot.com</div>
+      </div>
+
+      <!-- MESES -->
+      <div class="calendar-grid" id="calendarGrid"></div>
+
+      <!-- REFERENCIAS -->
+      <div class="referencias">
+        <div class="referencias-title">Referencias</div>
+        <div class="referencias-grid">
+          <div class="referencia-item">
+            <div class="referencia-dot dot-inscripcion"></div>
+            <span>Inscripción turno de examen</span>
+          </div>
+          <div class="referencia-item">
+            <div class="referencia-dot dot-examen"></div>
+            <span>Turno de examen</span>
+          </div>
+          <div class="referencia-item">
+            <div class="referencia-dot dot-cursado"></div>
+            <span>Inscripción cursado (2do día)</span>
+          </div>
+          <div class="referencia-item">
+            <div class="referencia-dot dot-recursado"></div>
+            <span>Inscripción recursado (3er día)</span>
+          </div>
+          <div class="referencia-item">
+            <div class="referencia-dot dot-cursado"></div>
+            <span>Inicio/fin cursado</span>
+          </div>
+          <div class="referencia-item">
+            <div class="referencia-dot dot-receso"></div>
+            <span>Receso</span>
+          </div>
+          <div class="referencia-item">
+            <div class="referencia-dot dot-ciclo"></div>
+            <span>Turno de examen ciclo superior</span>
+          </div>
+          <div class="referencia-item">
+            <div class="referencia-dot dot-special"></div>
+            <span>Examen Final</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LINKS ÚTILES -->
+    <div class="links-wrapper">
+      <div class="links-title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+        </svg>
+        Algunos links que te pueden servir
+      </div>
+      <div class="links-grid">
+        <div class="link-card">
+          <div class="link-content">
+            <div class="link-label">Página de la FACU</div>
+            <div class="link-url">fich.unl.edu.ar</div>
+          </div>
+          <a href="https://fich.unl.edu.ar" target="_blank" class="link-btn">Ir</a>
+        </div>
+        <div class="link-card">
+          <div class="link-content">
+            <div class="link-label">SIU GUARANÍ</div>
+            <div class="link-url">guarani.unl.edu.ar</div>
+          </div>
+          <a href="https://guarani.unl.edu.ar" target="_blank" class="link-btn">Ir</a>
+        </div>
+        <div class="link-card">
+          <div class="link-content">
+            <div class="link-label">E-FICH</div>
+            <div class="link-url">e.fich.unl.edu.ar</div>
+          </div>
+          <a href="https://e.fich.unl.edu.ar" target="_blank" class="link-btn">Ir</a>
+        </div>
+        <div class="link-card">
+          <div class="link-content">
+            <div class="link-label">¡Entérate de nuestras actividades!</div>
+            <div class="link-url">instagram.com/ingresoofich2026</div>
+          </div>
+          <a href="https://instagram.com/ingresoofich2026" target="_blank" class="link-btn">Ir</a>
+        </div>
+        <div class="link-card">
+          <div class="link-content">
+            <div class="link-label">Mails de Profes</div>
+            <div class="link-url">bibliotecafich.blogspot.com</div>
+          </div>
+          <a href="https://bibliotecafich.blogspot.com" target="_blank" class="link-btn">Ir</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="contact-box">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        Contacto e Información
+      </h3>
+      <div class="contact-info">
+        <p>
+          📧 <strong>Email:</strong> <a href="mailto:ingresofich@fich.edu.ar">ingresofich@fich.edu.ar</a><br>
+          📱 <strong>Instagram:</strong> <a href="https://instagram.com/ingresoofich2026" target="_blank">@IngresoFICH2026</a><br>
+          🌐 <strong>Blog:</strong> <a href="https://bibliotecafich.blogspot.com" target="_blank">bibliotecafich.blogspot.com</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:linear-gradient(180deg,#041728,#020c1a);border-top:1px solid rgba(34,196,110,.08);padding:56px 20px 28px;">
+  <div style="max-width:1280px;margin:0 auto;text-align:center;">
+    <p style="color:var(--text-muted);font-size:.85rem;">© 2025 Biblioteca Digital FICH. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="../js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería en Agrimensura — Biblioteca Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+        <!-- 1. Variables CSS -->
+    <link rel="stylesheet" href="../../css/variables.css">
+
+    <!-- 2. Estilos globales -->
+    <link rel="stylesheet" href="../../css/global.css">
+
+    <!-- 3. Navbar -->
+    <link rel="stylesheet" href="../../css/navbar.css">
+
+    <!-- 4. Estilos específicos -->
+    <link rel="stylesheet" href="../../css/styles.css">
+
+    <!-- 5. Formularios (si es necesario) -->
+    <link rel="stylesheet" href="../../css/forms.css">
+
+    <!-- 6. Responsividad -->
+    <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div>
+            <a href="../../index.html">
+                <div>
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <span>BIBLIOTECA <span>DIGITAL</span></span>
+                    <span>CEICH • FICH</span>
+                </div>
+            </a>
+            <div>
+                <a href="../que_es_la_biblioteca.html">¿Qué es?</a>
+                <a href="../modelos_notas_reglamento.html">Modelos de Notas</a>
+                <a href="../planes_estudio.html">Planes de Estudio</a>
+                <a href="../deja_apunte.html" style="background: #22c46e; color: #020c1a; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; transition: all .3s; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-feather"></i> DEJÁ TU APUNTE
+                </a>
+            </div>
+        </div>
+    </nav>
+
+<!-- ╔═════════════════════════════════════════╗
+     ║  HERO SECTION                           ║
+╚═════════════════════════════════════════╝ -->
+<section style="
+  min-height:80vh;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  padding-top:64px;
+  background:
+    radial-gradient(ellipse 70% 55% at 65% 35%, rgba(245,158,11,.065) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 70% at 5% 80%, rgba(245,158,11,.25) 0%, transparent 60%),
+    linear-gradient(155deg, #020c1a 0%, #041728 55%, #072240 100%);
+">
+  <div class="grid-bg" style="position:absolute;inset:0;z-index:0;"></div>
+
+  <div style="width:100%;position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:80px 20px;">
+    <div style="max-width:800px;">
+      <div class="fade-up d1" style="margin-bottom:20px;">
+        <div class="badge" style="display:inline-flex;">
+          <div class="pulse-dot"></div>
+          Plan de Estudio Actualizado 2025
+        </div>
+      </div>
+
+      <h1 class="fade-up d2" style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;color:#fff;line-height:1.08;margin-bottom:20px;font-family:'Syne',sans-serif;">
+        Ingeniería en <span style="color:var(--verde-500);">Agrimensura</span>
+      </h1>
+
+      <p class="fade-up d3" style="color:var(--text-soft);font-size:1.1rem;line-height:1.7;margin-bottom:32px;max-width:700px;">
+        Formamos profesionales especializados en mediciones, cartografía y geoinformática. Realizamos levantamientos topográficos, confeccionamos mapas, gestión catastral y análisis territorial con tecnología geoespacial de vanguardia.
+      </p>
+
+      <div class="fade-up d4" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:700px;">
+        <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:16px;">
+          <div style="color:var(--text-muted);font-size:.75rem;margin-bottom:8px;text-transform:uppercase;">Duración</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;color:#f59e0b;font-size:1.4rem;">5 años</div>
+        </div>
+        <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:16px;">
+          <div style="color:var(--text-muted);font-size:.75rem;margin-bottom:8px;text-transform:uppercase;">Créditos Totales</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;color:#f59e0b;font-size:1.4rem;">300</div>
+        </div>
+        <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.15);border-radius:12px;padding:16px;">
+          <div style="color:var(--text-muted);font-size:.75rem;margin-bottom:8px;text-transform:uppercase;">Modalidad</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;color:#f59e0b;font-size:1.4rem;">Presencial</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═════════════════════════════════════════╗
+     ║  PLAN DE ESTUDIO                        ║
+╚═════════════════════════════════════════╝ -->
+<section style="padding:80px 0;background:linear-gradient(180deg,#041728,#020c1a);">
+  <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+
+    <!-- TABS -->
+    <div class="reveal" style="display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap;">
+      <button onclick="mostrarAno(1)" id="tab-1" class="tab-button active" style="
+        padding:12px 20px;
+        border-radius:8px;
+        border:2px solid #f59e0b;
+        background:rgba(245,158,11,.1);
+        color:#f59e0b;
+        font-weight:700;
+        font-size:.9rem;
+        cursor:pointer;
+        transition:all .3s ease;
+        font-family:'Syne',sans-serif;
+      ">1.er Año</button>
+
+      <button onclick="mostrarAno(2)" id="tab-2" class="tab-button" style="
+        padding:12px 20px;
+        border-radius:8px;
+        border:2px solid rgba(245,158,11,.2);
+        background:transparent;
+        color:var(--text-muted);
+        font-weight:700;
+        font-size:.9rem;
+        cursor:pointer;
+        transition:all .3s ease;
+        font-family:'Syne',sans-serif;
+      ">2.do Año</button>
+
+      <button onclick="mostrarAno(3)" id="tab-3" class="tab-button" style="
+        padding:12px 20px;
+        border-radius:8px;
+        border:2px solid rgba(245,158,11,.2);
+        background:transparent;
+        color:var(--text-muted);
+        font-weight:700;
+        font-size:.9rem;
+        cursor:pointer;
+        transition:all .3s ease;
+        font-family:'Syne',sans-serif;
+      ">3.er Año</button>
+
+      <button onclick="mostrarAno(4)" id="tab-4" class="tab-button" style="
+        padding:12px 20px;
+        border-radius:8px;
+        border:2px solid rgba(245,158,11,.2);
+        background:transparent;
+        color:var(--text-muted);
+        font-weight:700;
+        font-size:.9rem;
+        cursor:pointer;
+        transition:all .3s ease;
+        font-family:'Syne',sans-serif;
+      ">4.to Año</button>
+
+      <button onclick="mostrarAno(5)" id="tab-5" class="tab-button" style="
+        padding:12px 20px;
+        border-radius:8px;
+        border:2px solid rgba(245,158,11,.2);
+        background:transparent;
+        color:var(--text-muted);
+        font-weight:700;
+        font-size:.9rem;
+        cursor:pointer;
+        transition:all .3s ease;
+        font-family:'Syne',sans-serif;
+      ">5.to Año</button>
+    </div>
+
+    <!-- CONTENIDO POR AÑO -->
+    <div id="ano-1" class="ano-content reveal">
+      <!-- 1ER CUATRIMESTRE -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Primer Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Comunicación Técnica</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Redacción y presentación técnica</p>
+          </div>
+
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Matemática Básica</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Fundamentos matemáticos</p>
+          </div>
+
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Química General</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/><path d="M12 5v14M5 19l7-14M19 19l-7-14"/>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Principios de química</p>
+          </div>
+
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Topografía General</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Introducción a la topografía</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2DO CUATRIMESTRE -->
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Segundo Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Álgebra Lineal</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Matrices y vectores</p>
+          </div>
+
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Cálculo con Geometría Analítica</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Cálculo y geometría</p>
+          </div>
+
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Comunicación Técnica</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Redacción y presentación</p>
+          </div>
+
+          <div class="materia-card">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;">
+              <h3 style="color:#fff;font-weight:700;font-size:.95rem;">Topografía General</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+                <path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/>
+              </svg>
+            </div>
+            <p style="color:var(--text-muted);font-size:.8rem;">Topografía avanzada</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AÑO 2 -->
+    <div id="ano-2" class="ano-content reveal" style="display:none;">
+      <!-- 1ER CUATRIMESTRE -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Primer Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Cálculo con Métodos Numéricos</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Métodos computacionales</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Ciencia, Tecnología y Sociedad</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Impacto sociotecnológico</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Física I</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Mecánica clásica</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Topografía Aplicada I</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Aplicaciones topográficas</p></div>
+        </div>
+      </div>
+
+      <!-- 2DO CUATRIMESTRE -->
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Segundo Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Física II</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Electromagnetismo</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Estadística</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Análisis estadístico</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Introducción a la Cartografía</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Fundamentos cartográficos</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Topografía Aplicada II</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Aplicaciones avanzadas</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AÑO 3 -->
+    <div id="ano-3" class="ano-content reveal" style="display:none;">
+      <!-- 1ER CUATRIMESTRE -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Primer Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Agrimensura Legal I</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Aspectos legales</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Fotogrametría</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="12" cy="12" r="3"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Técnicas fotogramétricas</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Geomorfología</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Formas del terreno</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Teoría de Errores</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Análisis de precisión</p></div>
+        </div>
+      </div>
+
+      <!-- 2DO CUATRIMESTRE -->
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Segundo Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Agrimensura Legal II</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Marco legal avanzado</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Geodesia</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Geometría de la Tierra</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Geografía Física</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Geografía y territorio</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Introducción a la Informática y SIG</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Sistemas de información</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AÑO 4 -->
+    <div id="ano-4" class="ano-content reveal" style="display:none;">
+      <!-- 1ER CUATRIMESTRE -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Primer Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Economía y Costos</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Análisis económico</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Interpretación de Imágenes</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="12" cy="12" r="3"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Análisis de imágenes</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Mensura</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Técnicas de medición</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Representaciones Cartográficas</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Representación de mapas</p></div>
+        </div>
+      </div>
+
+      <!-- 2DO CUATRIMESTRE -->
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Segundo Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Cartografía Temática</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Mapas temáticos</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Catastro</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Gestión catastral</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Sistemas de Información Geográfica</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Tecnología SIG</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Teledetección</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/><path d="M12 5v14M5 19l7-14M19 19l-7-14"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Sensores remotos</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AÑO 5 -->
+    <div id="ano-5" class="ano-content reveal" style="display:none;">
+      <!-- 1ER CUATRIMESTRE -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Primer Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Estudios y Trazados Especiales</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Estudios especializados</p></div>
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Ordenamiento Territorial</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Planificación territorial</p></div>
+        </div>
+      </div>
+
+      <!-- 2DO CUATRIMESTRE -->
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <div style="width:4px;height:24px;background:linear-gradient(135deg,#f59e0b,#d97706);border-radius:2px;"></div>
+          <h2 style="color:#fff;font-size:1.3rem;font-weight:700;font-family:'Syne',sans-serif;">Segundo Cuatrimestre</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div class="materia-card"><div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;"><h3 style="color:#fff;font-weight:700;font-size:.95rem;">Valuación Inmobiliaria</h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><p style="color:var(--text-muted);font-size:.8rem;">Valoración de propiedades</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ╔═════════════════════════════════════════╗
+     ║  CTA SECTION                            ║
+╚═════════════════════════════════════════╝ -->
+<section style="padding:60px 20px;background:#020c1a;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="reveal" style="background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(13,51,96,.4));border:1px solid rgba(245,158,11,.15);border-radius:18px;padding:40px;text-align:center;">
+      <h2 style="font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:12px;font-family:'Syne',sans-serif;">
+        ¿Necesitás más información?
+      </h2>
+      <p style="color:var(--text-soft);font-size:1rem;margin-bottom:24px;max-width:600px;margin-left:auto;margin-right:auto;">
+        Descargá el plan completo de estudios o comunicate con la Secretaría Académica para resolver tus dudas.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="../../pages/calendario_mail_clave.html" style="display:inline-flex;gap:8px;padding:12px 24px;font-size:.9rem;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:6px;color:#f59e0b;text-decoration:none;font-weight:600;transition:all .3s ease;">
+          📧 Contactar
+        </a>
+        <a href="../../pages/planes_estudio.html" style="display:inline-flex;gap:8px;padding:12px 24px;font-size:.9rem;background:transparent;border:1px solid rgba(245,158,11,.3);border-radius:6px;color:#f59e0b;text-decoration:none;font-weight:600;transition:all .3s ease;">
+          ← Volver a Planes
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:linear-gradient(180deg,#041728,#020c1a);border-top:1px solid rgba(245,158,11,.08);padding:56px 20px 28px;">
+  <div style="max-width:1280px;margin:0 auto;text-align:center;">
+    <p style="color:var(--text-muted);font-size:.85rem;">© 2025 Biblioteca Digital FICH. Ingeniería en Agrimensura</p>
+  </div>
+</footer>
+
+<!-- ESTILOS ESPECÍFICOS -->
+<style>
+  .materia-card {
+    background:rgba(245,158,11,.05);
+    border:1px solid rgba(245,158,11,.15);
+    border-radius:12px;
+    padding:16px;
+    transition:all .3s ease;
+    cursor:pointer;
+  }
+
+  .materia-card:hover {
+    background:rgba(245,158,11,.08);
+    border-color:rgba(245,158,11,.3);
+    transform:translateY(-4px);
+    box-shadow:0 12px 24px rgba(0,0,0,.3);
+  }
+
+  .tab-button.active {
+    background:rgba(245,158,11,.1) !important;
+    border-color:#f59e0b !important;
+    color:#f59e0b !important;
+  }
+
+  .tab-button:hover {
+    border-color:rgba(245,158,11,.3);
+    background:rgba(245,158,11,.05);
+  }
+
+  .ano-content.fade-in {
+    animation:fadeIn .4s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity:0;
+      transform:translateY(10px);
+    }
+    to {
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+</style>
+
+<!-- JAVASCRIPT -->
+<script>
+  function mostrarAno(numero) {
+    // Ocultar todos
+    document.querySelectorAll('.ano-content').forEach(el => {
+      el.style.display = 'none';
+      el.classList.remove('fade-in');
+    });
+    
+    // Actualizar botones
+    document.querySelectorAll('.tab-button').forEach((btn, idx) => {
+      btn.classList.remove('active');
+    });
+    
+    // Mostrar año seleccionado
+    const anoElement = document.getElementById(`ano-${numero}`);
+    if (anoElement) {
+      anoElement.style.display = 'block';
+      anoElement.classList.add('fade-in');
+    }
+    
+    // Activar botón
+    document.getElementById(`tab-${numero}`).classList.add('active');
+  }
+
+  // Revelar elementos al scroll
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealElements.forEach(el => observer.observe(el));
+
+  // Scroll navbar
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+<script src="../../js/materias.js"></script>
+</body>
+</html>

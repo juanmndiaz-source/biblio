@@ -1,0 +1,391 @@
+/* ═══════════════════════════════════════════
+   NAVBAR STYLES
+═══════════════════════════════════════════ */
+
+:root {
+  --navy-950: #020c1a;
+  --navy-900: #041728;
+  --navy-800: #072240;
+  --navy-700: #0d3360;
+  --verde-500: #22c46e;
+  --verde-400: #36e68a;
+  --text-soft: #8892b0;
+  --text-muted: #64748b;
+}
+
+/* Navbar Base */
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(2, 12, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(34, 196, 110, 0.1);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  background: rgba(2, 12, 26, 0.95);
+  border-bottom-color: rgba(34, 196, 110, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar Container */
+nav > div {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo Section */
+nav a[href*="index.html"]:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+nav a[href*="index.html"]:first-child:hover {
+  transform: translateY(-2px);
+}
+
+/* Logo Icon */
+nav a[href*="index.html"]:first-child > div:first-child {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #22c46e, #16a34a);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(34, 196, 110, 0.3);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+nav a[href*="index.html"]:first-child:hover > div:first-child {
+  box-shadow: 0 0 30px rgba(34, 196, 110, 0.5);
+  transform: scale(1.05);
+}
+
+nav a[href*="index.html"]:first-child i {
+  color: #020c1a;
+  font-size: 20px;
+}
+
+/* Logo Text */
+nav a[href*="index.html"]:first-child > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+nav a[href*="index.html"]:first-child span:first-of-type {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+  line-height: 1.1;
+  font-family: 'Syne', sans-serif;
+  color: #fff;
+}
+
+nav a[href*="index.html"]:first-child span:first-of-type span {
+  color: #22c46e;
+}
+
+nav a[href*="index.html"]:first-child span:last-of-type {
+  font-size: 10px;
+  color: #8892b0;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Navigation Menu */
+nav > div > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Nav Links */
+nav a[href*="que_es"],
+nav a[href*="modelos"],
+nav a[href*="planes_estudio"],
+nav a[href*="deja_apunte"] {
+  color: #8892b0;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 12px;
+}
+
+nav a[href*="que_es"]::after,
+nav a[href*="modelos"]::after,
+nav a[href*="planes_estudio"]::after,
+nav a[href*="deja_apunte"]:not([style*="background"])::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #22c46e;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a[href*="que_es"]:hover::after,
+nav a[href*="modelos"]:hover::after,
+nav a[href*="planes_estudio"]:hover::after,
+nav a[href*="deja_apunte"]:not([style*="background"]):hover::after {
+  width: calc(100% - 24px);
+}
+
+nav a[href*="que_es"]:hover,
+nav a[href*="modelos"]:hover,
+nav a[href*="planes_estudio"]:hover {
+  color: #22c46e;
+}
+
+/* Botón "Dejá tu Apunte" */
+nav a[href*="deja_apunte"][style*="background"] {
+  background: #22c46e !important;
+  color: #020c1a !important;
+  padding: 10px 20px !important;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+nav a[href*="deja_apunte"][style*="background"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #36e68a;
+  z-index: -1;
+  transition: left 0.3s ease;
+}
+
+nav a[href*="deja_apunte"][style*="background"]:hover {
+  color: #020c1a !important;
+  box-shadow: 0 8px 20px rgba(34, 196, 110, 0.3);
+  transform: translateY(-2px);
+}
+
+nav a[href*="deja_apunte"][style*="background"]:hover::before {
+  left: 0;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  nav > div {
+    padding: 0 16px;
+  }
+
+  nav a[href*="index.html"]:first-child span:first-of-type {
+    font-size: 16px;
+  }
+
+  nav > div > div:last-child {
+    gap: 16px;
+  }
+
+  nav a[href*="que_es"],
+  nav a[href*="modelos"],
+  nav a[href*="planes_estudio"],
+  nav a[href*="deja_apunte"]:not([style*="background"]) {
+    font-size: 9px;
+  }
+
+  nav a[href*="deja_apunte"][style*="background"] {
+    padding: 8px 16px !important;
+    font-size: 9px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  nav {
+    height: 64px;
+  }
+
+  nav > div {
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+
+  nav a[href*="index.html"]:first-child {
+    gap: 8px;
+    order: 1;
+  }
+
+  nav a[href*="index.html"]:first-child > div:first-child {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  nav a[href*="index.html"]:first-child i {
+    font-size: 18px;
+  }
+
+  nav a[href*="index.html"]:first-child span:first-of-type {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  nav a[href*="index.html"]:first-child span:last-of-type {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  nav > div > div:last-child {
+    gap: 8px;
+    order: 2;
+    width: 100%;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  nav a[href*="que_es"],
+  nav a[href*="modelos"],
+  nav a[href*="planes_estudio"],
+  nav a[href*="deja_apunte"]:not([style*="background"]) {
+    font-size: 8px;
+    padding: 6px 8px;
+    letter-spacing: 0.5px;
+  }
+
+  nav a[href*="deja_apunte"][style*="background"] {
+    padding: 6px 12px !important;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  nav a[href*="que_es"]::after,
+  nav a[href*="modelos"]::after,
+  nav a[href*="planes_estudio"]::after,
+  nav a[href*="deja_apunte"]:not([style*="background"])::after {
+    height: 1px;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 480px) {
+  nav {
+    height: auto;
+    padding: 8px 0;
+  }
+
+  nav > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  nav a[href*="index.html"]:first-child {
+    order: 1;
+    justify-content: flex-start;
+  }
+
+  nav > div > div:last-child {
+    order: 2;
+    width: 100%;
+    gap: 4px;
+    justify-content: space-between;
+  }
+
+  nav a[href*="que_es"],
+  nav a[href*="modelos"],
+  nav a[href*="planes_estudio"] {
+    font-size: 7px;
+    padding: 4px 6px;
+    flex: 1;
+    text-align: center;
+  }
+
+  nav a[href*="deja_apunte"][style*="background"] {
+    padding: 6px 10px !important;
+    font-size: 7px;
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Animaciones */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  animation: slideDown 0.4s ease-out;
+}
+
+/* Efectos de hover general */
+nav a {
+  cursor: pointer;
+}
+
+nav a:active {
+  transform: scale(0.98);
+}
+
+/* Scrollbar Navbar */
+body {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: auto;
+  }
+}

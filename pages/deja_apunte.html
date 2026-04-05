@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejá tu Apunte — Biblioteca Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- 1. Variables CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <!-- 2. Estilos globales -->
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- 3. Navbar -->
+    <link rel="stylesheet" href="../css/navbar.css">
+
+    <!-- 4. Estilos específicos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- 5. Formularios (si es necesario) -->
+    <link rel="stylesheet" href="../css/forms.css">
+
+    <!-- 6. Responsividad -->
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div>
+            <a href="../index.html">
+                <div>
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <span>BIBLIOTECA <span>DIGITAL</span></span>
+                    <span>CEICH • FICH</span>
+                </div>
+            </a>
+            <div>
+                <a href="que_es_la_biblioteca.html">¿Qué es?</a>
+                <a href="modelos_notas_reglamento.html">Modelos de Notas</a>
+                <a href="planes_estudio.html">Planes de Estudio</a>
+                <a href="deja_apunte.html" style="background: #22c46e; color: #020c1a; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; transition: all .3s; display: flex; align-items: center; gap: 8px;">
+                    <i class="fas fa-feather"></i> DEJÁ TU APUNTE
+                </a>
+            </div>
+        </div>
+    </nav>
+
+<!-- MAIN CONTENT -->
+<section style="padding:100px 20px 80px; background: linear-gradient(180deg, #041728 0%, #020c1a 100%); min-height:100vh; margin-top:64px;">
+  <div class="grid-bg" style="position:absolute;inset:0;z-index:0;"></div>
+  
+  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1;">
+    
+    <!-- HEADER -->
+    <div style="margin-bottom:40px;text-align:center;">
+      <div class="badge" style="margin:0 auto 16px;">
+        <div class="pulse-dot"></div>
+        Comunidad colaborativa
+      </div>
+      <h1 style="font-size:2.8rem;font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px;font-family:'Syne',sans-serif;">
+        Compartí tu <span style="color:var(--verde-500);">apunte</span>
+      </h1>
+      <p style="color:var(--text-soft);font-size:1.05rem;line-height:1.6;max-width:700px;margin:0 auto;">
+        ¿Tenés material que te fue útil? Compartilo con tus compañeros y ayudá a construir la biblioteca colaborativa.
+      </p>
+    </div>
+
+    <!-- INFO BOX -->
+    <div class="info-box">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        ¿Qué materiales aceptamos?
+      </h3>
+      <p>
+        Apuntes, trabajos prácticos, exámenes, libros, presentaciones, guías de estudio, resúmenes, o cualquier otro material de estudio que pueda serle útil a otros estudiantes.
+      </p>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="form-container">
+      <div class="success-message" id="successMessage">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;display:inline;margin-right:8px;">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        ¡Gracias por compartir! Tu apunte fue enviado correctamente.
+      </div>
+
+      <form id="apunteForm" onsubmit="enviarApunte(event)">
+        
+        <!-- MATERIA -->
+        <div class="form-group">
+          <label>Materia <span class="required">*</span></label>
+          <input 
+            type="text" 
+            name="materia" 
+            placeholder="Ej: Análisis Matemático I, Física II, etc." 
+            required
+          >
+          <div class="form-hint">Nombre de la materia o asignatura</div>
+        </div>
+
+        <!-- TEMA DEL ARCHIVO -->
+        <div class="form-group">
+          <label>Tema del archivo <span class="required">*</span></label>
+          <input 
+            type="text" 
+            name="tema" 
+            placeholder="Ej: Derivadas e Integrales, Movimiento Circular, etc." 
+            required
+          >
+          <div class="form-hint">Título o nombre específico del material</div>
+        </div>
+
+        <!-- UNIDAD/DESCRIPCIÓN -->
+        <div class="form-group">
+          <label>Unidad de la materia / Descripción</label>
+          <textarea 
+            name="descripcion" 
+            placeholder="Describe brevemente el contenido y qué temas cubre este material (opcional)"
+          ></textarea>
+          <div class="form-hint">Información adicional que ayude a otros a encontrar el material</div>
+        </div>
+
+        <!-- TIPO DE MATERIAL -->
+        <div class="form-group">
+          <label>Tipo de material <span class="required">*</span></label>
+          <select name="tipo" required>
+            <option value="">Seleccionar tipo de material</option>
+            <option value="apuntes">Apuntes de clase</option>
+            <option value="tp">Trabajos Prácticos (TP)</option>
+            <option value="examenes">Exámenes/Parciales</option>
+            <option value="libro">Libro o capítulo</option>
+            <option value="powerpoint">Presentación PowerPoint</option>
+            <option value="guia">Guía de estudio</option>
+            <option value="resumen">Resumen</option>
+            <option value="otro">Otro</option>
+          </select>
+          <div class="form-hint">¿Qué tipo de material compartís?</div>
+        </div>
+
+        <!-- LINK DE DESCARGA -->
+        <div class="form-group">
+          <label>Link para descarga del material <span class="required">*</span></label>
+          <input 
+            type="url" 
+            name="link" 
+            placeholder="https://drive.google.com/... o https://www.dropbox.com/..." 
+            required
+          >
+          <div class="form-hint">Google Drive, Dropbox, MediaFire, o cualquier otro hosting (debe ser un link público)</div>
+        </div>
+
+        <!-- NOMBRE (OPCIONAL) -->
+        <div class="form-group">
+          <label>Tu nombre (opcional)</label>
+          <input 
+            type="text" 
+            name="nombre" 
+            placeholder="¿Cómo te llamas?"
+          >
+          <div class="form-hint">Si querés que se te acredite como aportante</div>
+        </div>
+
+        <!-- BOTÓN SUBMIT -->
+        <button type="submit" class="btn-submit">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;">
+            <path d="M12 19l9 2-9-18-9 18 9-2m0 0v-8"/>
+          </svg>
+          Compartir Apunte
+        </button>
+      </form>
+    </div>
+
+    <!-- FOOTER INFO -->
+    <div style="text-align:center;margin-top:40px;color:var(--text-soft);font-size:0.9rem;">
+      <p>
+        Los apuntes compartidos se revisarán antes de ser publicados en la biblioteca.<br>
+        Asegúrate de que tengas derecho a compartir el material.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:linear-gradient(180deg,#041728,#020c1a);border-top:1px solid rgba(34,196,110,.08);padding:56px 20px 28px;">
+  <div style="max-width:1280px;margin:0 auto;text-align:center;">
+    <p style="color:var(--text-muted);font-size:.85rem;">© 2025 Biblioteca Digital FICH. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="../js/script.js" defer></script>
+</body>
+</html>
